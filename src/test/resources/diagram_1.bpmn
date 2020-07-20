@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_08ra8wq" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.1.2">
+  <bpmn:process id="MultiTenancyProcess" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>SequenceFlow_1rqod0z</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1rqod0z" sourceRef="StartEvent_1" targetRef="Task_1he2xob" />
+    <bpmn:userTask id="Task_1he2xob" name="Задание 1">
+      <bpmn:incoming>SequenceFlow_1rqod0z</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0yyooas</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0yyooas" sourceRef="Task_1he2xob" targetRef="Task_13ka2po" />
+    <bpmn:userTask id="Task_13ka2po" name="Задание 2">
+      <bpmn:incoming>SequenceFlow_0yyooas</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_03q6h9b</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_03q6h9b" sourceRef="Task_13ka2po" targetRef="Task_1wn2ikq" />
+    <bpmn:userTask id="Task_1wn2ikq" name="Задание 3">
+      <bpmn:incoming>SequenceFlow_03q6h9b</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_18eo9k7</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_18eo9k7" sourceRef="Task_1wn2ikq" targetRef="Task_15nootp" />
+    <bpmn:endEvent id="EndEvent_1cca132">
+      <bpmn:incoming>SequenceFlow_0bgce8p</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0bgce8p" sourceRef="Task_15nootp" targetRef="EndEvent_1cca132" />
+    <bpmn:userTask id="Task_15nootp" name="Задача 4">
+      <bpmn:incoming>SequenceFlow_18eo9k7</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0bgce8p</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="MultiTenancyProcess">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="156" y="103" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1rqod0z_di" bpmnElement="SequenceFlow_1rqod0z">
+        <di:waypoint x="192" y="121" />
+        <di:waypoint x="242" y="121" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_1sowzxm_di" bpmnElement="Task_1he2xob">
+        <dc:Bounds x="242" y="81" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0yyooas_di" bpmnElement="SequenceFlow_0yyooas">
+        <di:waypoint x="342" y="121" />
+        <di:waypoint x="392" y="121" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_02fo71p_di" bpmnElement="Task_13ka2po">
+        <dc:Bounds x="392" y="81" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_03q6h9b_di" bpmnElement="SequenceFlow_03q6h9b">
+        <di:waypoint x="492" y="121" />
+        <di:waypoint x="542" y="121" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0bplme2_di" bpmnElement="Task_1wn2ikq">
+        <dc:Bounds x="542" y="81" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_18eo9k7_di" bpmnElement="SequenceFlow_18eo9k7">
+        <di:waypoint x="642" y="121" />
+        <di:waypoint x="692" y="121" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_1cca132_di" bpmnElement="EndEvent_1cca132">
+        <dc:Bounds x="842" y="103" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0bgce8p_di" bpmnElement="SequenceFlow_0bgce8p">
+        <di:waypoint x="792" y="121" />
+        <di:waypoint x="842" y="121" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0ub7mz3_di" bpmnElement="Task_15nootp">
+        <dc:Bounds x="692" y="81" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
